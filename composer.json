@@ -1,17 +1,17 @@
 {
-    "name": "lajax/yii2-translate-manager",
+    "name": "sagarp1992/groovy-trans",
     "description": "Online Translate",
     "type": "yii2-extension",
     "keywords": ["yii2", "extension", "translate", "language", "module"],
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/lajax/yii2-translate-manager/issues?state=open",
-		"source": "https://github.com/lajax/yii2-translate-manager"
+        "issues": "https://github.com/sagarp1992/groovy-trans/issues?state=open",
+		"source": "https://github.com/sagarp1992/groovy-trans"
 	},
     "authors": [
         {
-            "name": "Lajos Molnar",
-            "email": "lajax.m@gmail.com"
+            "name": "Sagar",
+            "email": "sagarpatel8153@gmail.com"
         }
     ],
     "require": {
