@@ -1,10 +1,10 @@
 <?php
 
-namespace lajax\translatemanager\controllers\actions;
+namespace sagarp1992\groovytrans\controllers\actions;
 
 use Yii;
-use lajax\translatemanager\models\LanguageSource;
-use lajax\translatemanager\models\LanguageTranslate;
+use sagarp1992\groovytrans\models\LanguageSource;
+use sagarp1992\groovytrans\models\LanguageTranslate;
 
 /**
  * Class for creating front end translation dialoge box

@@ -46,7 +46,7 @@ Or use the [namespaced migration](http://www.yiiframework.com/doc-2.0/guide-db-m
     'migrate' => [
         'class' => 'yii\console\controllers\MigrateController',
         'migrationNamespaces' => [
-            'lajax\translatemanager\migrations\namespaced',
+            'sagarp1992\groovytrans\migrations\namespaced',
         ],
     ],
 ],
@@ -89,7 +89,7 @@ Simple example:
 ```php
 'modules' => [
     'translatemanager' => [
-        'class' => 'lajax\translatemanager\Module',
+        'class' => 'sagarp1992\groovytrans\Module',
     ],
 ],
 ```
@@ -98,7 +98,7 @@ A more complex example including database table with multilingual support is bel
 ```php
 'modules' => [
     'translatemanager' => [
-        'class' => 'lajax\translatemanager\Module',
+        'class' => 'sagarp1992\groovytrans\Module',
         'root' => '@app',               // The root directory of the project scan.
         'scanRootParentDirectory' => true, // Whether scan the defined `root` parent directory, or the folder itself.
                                            // IMPORTANT: for detailed instructions read the chapter about root configuration.
@@ -125,10 +125,10 @@ A more complex example including database table with multilingual support is bel
             ]
         ],
         'scanners' => [ // define this if you need to override default scanners (below)
-            '\lajax\translatemanager\services\scanners\ScannerPhpFunction',
-            '\lajax\translatemanager\services\scanners\ScannerPhpArray',
-            '\lajax\translatemanager\services\scanners\ScannerJavaScriptFunction',
-            '\lajax\translatemanager\services\scanners\ScannerDatabase',
+            '\sagarp1992\groovytrans\services\scanners\ScannerPhpFunction',
+            '\sagarp1992\groovytrans\services\scanners\ScannerPhpArray',
+            '\sagarp1992\groovytrans\services\scanners\ScannerJavaScriptFunction',
+            '\sagarp1992\groovytrans\services\scanners\ScannerDatabase',
         ],
     ],
 ],
@@ -219,7 +219,7 @@ DbManager:
 'bootstrap' => ['translatemanager'],
 'components' => [
     'translatemanager' => [
-        'class' => 'lajax\translatemanager\Component'
+        'class' => 'sagarp1992\groovytrans\Component'
     ]
 ]
 ```
@@ -233,14 +233,14 @@ To translate static messages in JavaScript files it is necessary to register the
 To register your scripts, call the following method in each action:
 
 ```php
-\lajax\translatemanager\helpers\Language::registerAssets();
+\sagarp1992\groovytrans\helpers\Language::registerAssets();
 ```
 
 A simple example for calling the above method at each page load:
 ```php
 namespace common\controllers;
 
-use lajax\translatemanager\helpers\Language;
+use sagarp1992\groovytrans\helpers\Language;
 
 // IMPORTANT: all Controllers must originate from this Controller!
 class Controller extends \yii\web\Controller {
@@ -258,17 +258,17 @@ Simple example for displaying a button to switch to front end translation mode.
 (The button will only appear for users who have the necessary privileges for translating!)
 
 ```php
-\lajax\translatemanager\widgets\ToggleTranslate::widget();
+\sagarp1992\groovytrans\widgets\ToggleTranslate::widget();
 ```
 
 A more complex example for displaying the button:
 
 ```php
-\lajax\translatemanager\widgets\ToggleTranslate::widget([
- 'position' => \lajax\translatemanager\widgets\ToggleTranslate::POSITION_TOP_RIGHT,
+\sagarp1992\groovytrans\widgets\ToggleTranslate::widget([
+ 'position' => \sagarp1992\groovytrans\widgets\ToggleTranslate::POSITION_TOP_RIGHT,
  'template' => '<a href="javascript:void(0);" id="toggle-translate" class="{position}" data-language="{language}" data-url="{url}"><i></i> {text}</a><div id="translate-manager-div"></div>',
- 'frontendTranslationAsset' => 'lajax\translatemanager\bundles\FrontendTranslationAsset',
- 'frontendTranslationPluginAsset' => 'lajax\translatemanager\bundles\FrontendTranslationPluginAsset',
+ 'frontendTranslationAsset' => 'sagarp1992\groovytrans\bundles\FrontendTranslationAsset',
+ 'frontendTranslationPluginAsset' => 'sagarp1992\groovytrans\bundles\FrontendTranslationPluginAsset',
 ]);
 ```
 
@@ -293,14 +293,14 @@ Yii::t('category', "Don't be so upset.");
 PHP functions for front end translation:
 
 ```php
-use lajax\translatemanager\helpers\Language as Lx;
+use sagarp1992\groovytrans\helpers\Language as Lx;
 
 Lx::t('category', 'Apple');
 Lx::t('category', 'Hello {name}!', ['name' => 'World']);
 Lx::t('category', "Don't be so upset.");
 ```
 
-**IMPORTANT: The lajax\translatemanager\helpers\Language::t() (Lx::t()) function currently does not support the translation of HTMLattributes**
+**IMPORTANT: The sagarp1992\groovytrans\helpers\Language::t() (Lx::t()) function currently does not support the translation of HTMLattributes**
 
 PHP arrays:
 
@@ -319,7 +319,7 @@ private $_STATUSES = [
  * return array
  */
 public function getStatuses() {
-    return \lajax\translatemanager\helpers\Language::a($this->_STATUSES);
+    return \sagarp1992\groovytrans\helpers\Language::a($this->_STATUSES);
 }
 
 /**
@@ -332,7 +332,7 @@ private $_GENDERS = ['Male', 'Female'];
  * return array
  */
 public function getGenders() {
-    return \lajax\translatemanager\helpers\Language::a($this->_GENDERS, 'de-DE');
+    return \sagarp1992\groovytrans\helpers\Language::a($this->_GENDERS, 'de-DE');
 }
 ```
 
@@ -343,7 +343,7 @@ PHP Database:
 ```php
 namespace common\models;
 
-use lajax\translatemanager\helpers\Language;
+use sagarp1992\groovytrans\helpers\Language;
 
 /**
  * This is the model class for table "category".
@@ -440,13 +440,13 @@ class Category extends \yii\db\ActiveRecord {
     {
         return [
             [
-                'class' => \lajax\translatemanager\behaviors\TranslateBehavior::className(),
+                'class' => \sagarp1992\groovytrans\behaviors\TranslateBehavior::className(),
                 'translateAttributes' => ['name', 'description'],
             ],
 
             // or If the category is the database table name.
             // [
-            //     'class' => \lajax\translatemanager\behaviors\TranslateBehavior::className(),
+            //     'class' => \sagarp1992\groovytrans\behaviors\TranslateBehavior::className(),
             //     'translateAttributes' => ['name', 'description'],
             //     'category' => static::tableName(),
             // ],
@@ -491,7 +491,7 @@ Register the command
 
 ```php
 'controllerMap' => [
-    'translate' => \lajax\translatemanager\commands\TranslatemanagerController::className()
+    'translate' => \sagarp1992\groovytrans\commands\TranslatemanagerController::className()
 ],
 ```
 

@@ -8,8 +8,8 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $languageSource \lajax\translatemanager\models\LanguageSource */
-/* @var $languageTranslate \lajax\translatemanager\models\LanguageTranslate */
+/* @var $languageSource \sagarp1992\groovytrans\models\LanguageSource */
+/* @var $languageTranslate \sagarp1992\groovytrans\models\LanguageTranslate */
 ?>
 <div id="translate-manager-dialog">
     <div class="translate-manager-message">

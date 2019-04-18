@@ -1,10 +1,10 @@
 <?php
 
-namespace lajax\translatemanager\controllers\actions;
+namespace sagarp1992\groovytrans\controllers\actions;
 
 use Yii;
 use yii\web\Response;
-use lajax\translatemanager\models\Language;
+use sagarp1992\groovytrans\models\Language;
 
 /**
  * Class that modifies the state of a language.

@@ -1,11 +1,11 @@
 <?php
 
-namespace lajax\translatemanager\behaviors;
+namespace sagarp1992\groovytrans\behaviors;
 
 use Yii;
 use yii\db\BaseActiveRecord;
 use yii\behaviors\AttributeBehavior;
-use lajax\translatemanager\helpers\Language;
+use sagarp1992\groovytrans\helpers\Language;
 
 /**
  * TranslateManager Database translate behavior.
@@ -14,7 +14,7 @@ use lajax\translatemanager\helpers\Language;
  *
  * ~~~
  * [
- *      'class' => lajax\translatemanager\behaviors\TranslateBehavior::className(),
+ *      'class' => sagarp1992\groovytrans\behaviors\TranslateBehavior::className(),
  *      'translateAttributes' => ['names of multilingual fields'],
  * ],
  * ~~~
@@ -23,7 +23,7 @@ use lajax\translatemanager\helpers\Language;
  *
  * ~~~
  * [
- *      'class' => lajax\translatemanager\behaviors\TranslateBehavior::className(),
+ *      'class' => sagarp1992\groovytrans\behaviors\TranslateBehavior::className(),
  *      'translateAttributes' => ['names of multilingual fields'],
  *      'category' => static::tableName(),
  * ],

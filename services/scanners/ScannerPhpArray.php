@@ -1,9 +1,9 @@
 <?php
 
-namespace lajax\translatemanager\services\scanners;
+namespace sagarp1992\groovytrans\services\scanners;
 
 use yii\helpers\Console;
-use lajax\translatemanager\services\Scanner;
+use sagarp1992\groovytrans\services\Scanner;
 
 /**
  * Class for processing PHP files.
@@ -28,13 +28,13 @@ use lajax\translatemanager\services\Scanner;
  * Translation to site language:
  *
  * ~~~
- * $genders = \lajax\translatemanager\helpers\Language::a($this->_GENDERS);
+ * $genders = \sagarp1992\groovytrans\helpers\Language::a($this->_GENDERS);
  * ~~~
  *
  * Translating to the language of your coice:
  *
  * ~~~
- * $statuses = \lajax\translatemanager\helpers\Language::a($this->_STATUSES, [], 'de-DE');
+ * $statuses = \sagarp1992\groovytrans\helpers\Language::a($this->_STATUSES, [], 'de-DE');
  * ~~~
  *
  * @author Lajos Molnár <lajax.m@gmail.com>

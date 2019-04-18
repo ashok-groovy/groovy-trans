@@ -6,7 +6,7 @@
  * @since 1.0
  */
 
-namespace lajax\translatemanager\models;
+namespace sagarp1992\groovytrans\models;
 
 use Yii;
 
@@ -54,8 +54,8 @@ class LanguageTranslate extends \yii\db\ActiveRecord
         return [
             [['id', 'language'], 'required'],
             [['id'], 'integer'],
-            [['id'], 'exist', 'targetClass' => '\lajax\translatemanager\models\LanguageSource'],
-            [['language'], 'exist', 'targetClass' => '\lajax\translatemanager\models\Language', 'targetAttribute' => 'language_id'],
+            [['id'], 'exist', 'targetClass' => '\sagarp1992\groovytrans\models\LanguageSource'],
+            [['language'], 'exist', 'targetClass' => '\sagarp1992\groovytrans\models\Language', 'targetAttribute' => 'language_id'],
             [['translation'], 'string'],
             [['language'], 'string', 'max' => 5],
         ];

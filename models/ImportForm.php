@@ -1,6 +1,6 @@
 <?php
 
-namespace lajax\translatemanager\models;
+namespace sagarp1992\groovytrans\models;
 
 use Yii;
 use yii\base\Exception;

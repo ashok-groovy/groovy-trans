@@ -1,12 +1,12 @@
 <?php
 
-namespace lajax\translatemanager\controllers\actions;
+namespace sagarp1992\groovytrans\controllers\actions;
 
-use lajax\translatemanager\models\Language;
-use lajax\translatemanager\services\Generator;
+use sagarp1992\groovytrans\models\Language;
+use sagarp1992\groovytrans\services\Generator;
 use Yii;
 use yii\web\UploadedFile;
-use lajax\translatemanager\models\ImportForm;
+use sagarp1992\groovytrans\models\ImportForm;
 
 /**
  * Class for exporting translations.

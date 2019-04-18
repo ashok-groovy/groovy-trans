@@ -1,8 +1,8 @@
 <?php
 
-namespace lajax\translatemanager\controllers\actions;
+namespace sagarp1992\groovytrans\controllers\actions;
 
-use lajax\translatemanager\services\Optimizer;
+use sagarp1992\groovytrans\services\Optimizer;
 
 /**
  * Class for optimizing language database.

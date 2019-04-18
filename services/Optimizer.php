@@ -1,9 +1,9 @@
 <?php
 
-namespace lajax\translatemanager\services;
+namespace sagarp1992\groovytrans\services;
 
 use yii\helpers\Console;
-use lajax\translatemanager\models\LanguageSource;
+use sagarp1992\groovytrans\models\LanguageSource;
 
 /**
  * Optimizer class for optimizing database tables

@@ -1,6 +1,6 @@
 <?php
 
-namespace lajax\translatemanager\bundles;
+namespace sagarp1992\groovytrans\bundles;
 
 use yii\web\AssetBundle;
 
@@ -30,6 +30,6 @@ class ScanPluginAsset extends AssetBundle
      */
     public $depends = [
         'yii\web\JqueryAsset',
-        'lajax\translatemanager\bundles\TranslationPluginAsset',
+        'sagarp1992\groovytrans\bundles\TranslationPluginAsset',
     ];
 }

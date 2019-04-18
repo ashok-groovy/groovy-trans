@@ -1,6 +1,6 @@
 <?php
 
-namespace lajax\translatemanager\controllers\actions;
+namespace sagarp1992\groovytrans\controllers\actions;
 
 /**
  * Displays a single Language model.

@@ -1,10 +1,10 @@
 <?php
 
-namespace lajax\translatemanager\services;
+namespace sagarp1992\groovytrans\services;
 
 use Yii;
 use yii\helpers\Console;
-use lajax\translatemanager\models\LanguageSource;
+use sagarp1992\groovytrans\models\LanguageSource;
 
 /**
  * Scanner class for scanning project, detecting new language elements
@@ -34,10 +34,10 @@ class Scanner
      * @var array List of language element classes
      */
     public $scanners = [
-        '\lajax\translatemanager\services\scanners\ScannerPhpFunction',
-        '\lajax\translatemanager\services\scanners\ScannerPhpArray',
-        '\lajax\translatemanager\services\scanners\ScannerJavaScriptFunction',
-        '\lajax\translatemanager\services\scanners\ScannerDatabase',
+        '\sagarp1992\groovytrans\services\scanners\ScannerPhpFunction',
+        '\sagarp1992\groovytrans\services\scanners\ScannerPhpArray',
+        '\sagarp1992\groovytrans\services\scanners\ScannerJavaScriptFunction',
+        '\sagarp1992\groovytrans\services\scanners\ScannerDatabase',
     ];
 
     /**

@@ -1,12 +1,12 @@
 <?php
 
-namespace lajax\translatemanager\controllers;
+namespace sagarp1992\groovytrans\controllers;
 
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\data\ArrayDataProvider;
 use yii\filters\AccessControl;
-use lajax\translatemanager\models\Language;
+use sagarp1992\groovytrans\models\Language;
 
 /**
  * Controller for managing multilinguality.
@@ -19,7 +19,7 @@ class LanguageController extends Controller
 {
     public $enableCsrfValidation = false; 
     /**
-     * @var \lajax\translatemanager\Module TranslateManager module
+     * @var \sagarp1992\groovytrans\Module TranslateManager module
      */
     public $module;
 
@@ -58,49 +58,49 @@ class LanguageController extends Controller
                 'class' => 'yii\web\ErrorAction',
             ],
             'list' => [
-                'class' => 'lajax\translatemanager\controllers\actions\ListAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\ListAction',
             ],
             'change-status' => [
-                'class' => 'lajax\translatemanager\controllers\actions\ChangeStatusAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\ChangeStatusAction',
             ],
             'optimizer' => [
-                'class' => 'lajax\translatemanager\controllers\actions\OptimizerAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\OptimizerAction',
             ],
             'scan' => [
-                'class' => 'lajax\translatemanager\controllers\actions\ScanAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\ScanAction',
             ],
             'translate' => [
-                'class' => 'lajax\translatemanager\controllers\actions\TranslateAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\TranslateAction',
             ],
             'save' => [
-                'class' => 'lajax\translatemanager\controllers\actions\SaveAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\SaveAction',
             ],
             'dialog' => [
-                'class' => 'lajax\translatemanager\controllers\actions\DialogAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\DialogAction',
             ],
             'message' => [
-                'class' => 'lajax\translatemanager\controllers\actions\MessageAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\MessageAction',
             ],
             'view' => [
-                'class' => 'lajax\translatemanager\controllers\actions\ViewAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\ViewAction',
             ],
             'create' => [
-                'class' => 'lajax\translatemanager\controllers\actions\CreateAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\CreateAction',
             ],
             'update' => [
-                'class' => 'lajax\translatemanager\controllers\actions\UpdateAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\UpdateAction',
             ],
             'delete' => [
-                'class' => 'lajax\translatemanager\controllers\actions\DeleteAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\DeleteAction',
             ],
             'delete-source' => [
-                'class' => 'lajax\translatemanager\controllers\actions\DeleteSourceAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\DeleteSourceAction',
             ],
             'import' => [
-                'class' => 'lajax\translatemanager\controllers\actions\ImportAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\ImportAction',
             ],
             'export' => [
-                'class' => 'lajax\translatemanager\controllers\actions\ExportAction',
+                'class' => 'sagarp1992\groovytrans\controllers\actions\ExportAction',
             ],
         ];
     }

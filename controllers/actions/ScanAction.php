@@ -1,11 +1,11 @@
 <?php
 
-namespace lajax\translatemanager\controllers\actions;
+namespace sagarp1992\groovytrans\controllers\actions;
 
 use yii\data\ArrayDataProvider;
-use lajax\translatemanager\services\Scanner;
-use lajax\translatemanager\models\LanguageSource;
-use lajax\translatemanager\bundles\ScanPluginAsset;
+use sagarp1992\groovytrans\services\Scanner;
+use sagarp1992\groovytrans\models\LanguageSource;
+use sagarp1992\groovytrans\bundles\ScanPluginAsset;
 
 /**
  * Class for detecting language elements.

@@ -1,6 +1,6 @@
 <?php
 
-namespace lajax\translatemanager;
+namespace sagarp1992\groovytrans;
 
 use Yii;
 
@@ -14,7 +14,7 @@ use Yii;
  * 'bootstrap' => ['translatemanager'],
  * 'component' => [
  *      'translatemanager' => [
- *          'class' => 'lajax\translatemanager\Component'
+ *          'class' => 'sagarp1992\groovytrans\Component'
  *      ]
  * ]
  * ~~~

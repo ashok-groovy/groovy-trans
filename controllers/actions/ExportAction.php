@@ -1,13 +1,13 @@
 <?php
 
-namespace lajax\translatemanager\controllers\actions;
+namespace sagarp1992\groovytrans\controllers\actions;
 
 use Yii;
 use yii\web\JsonResponseFormatter;
 use yii\web\Response;
 use yii\web\XmlResponseFormatter;
-use lajax\translatemanager\Module;
-use lajax\translatemanager\models\ExportForm;
+use sagarp1992\groovytrans\Module;
+use sagarp1992\groovytrans\models\ExportForm;
 
 /**
  * Class for exporting translations.
