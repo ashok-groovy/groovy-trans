@@ -1,9 +1,9 @@
 <?php
 
-namespace sagarp1992\groovytrans\services\scanners;
+namespace lajax\translatemanagerservices\scanners;
 
 use yii\helpers\Console;
-use sagarp1992\groovytrans\services\Scanner;
+use lajax\translatemanagerservices\Scanner;
 
 /**
  * Class for processing JavaScript files.

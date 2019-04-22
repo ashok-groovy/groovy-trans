@@ -1,7 +1,7 @@
 <?php
 
-use sagarp1992\groovytrans\models\ExportForm;
-use sagarp1992\groovytrans\models\Language;
+use lajax\translatemanagermodels\ExportForm;
+use lajax\translatemanagermodels\Language;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;

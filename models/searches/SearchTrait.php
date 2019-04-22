@@ -1,6 +1,6 @@
 <?php
 
-namespace sagarp1992\groovytrans\models\searches;
+namespace lajax\translatemanagermodels\searches;
 
 /**
  * Model search helper trait. Helps with common search tasks.

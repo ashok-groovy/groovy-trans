@@ -1,6 +1,6 @@
 <?php
 
-namespace sagarp1992\groovytrans\controllers\actions;
+namespace lajax\translatemanagercontrollers\actions;
 
 /**
  * Deletes an existing Language model.

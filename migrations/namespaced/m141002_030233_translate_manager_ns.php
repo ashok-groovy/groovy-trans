@@ -1,6 +1,6 @@
 <?php
 
-namespace sagarp1992\groovytrans\migrations\namespaced;
+namespace lajax\translatemanagermigrations\namespaced;
 
 require_once dirname(__DIR__) . '/m141002_030233_translate_manager.php';
 

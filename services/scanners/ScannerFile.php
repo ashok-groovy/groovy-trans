@@ -1,12 +1,12 @@
 <?php
 
-namespace sagarp1992\groovytrans\services\scanners;
+namespace lajax\translatemanagerservices\scanners;
 
 use Yii;
 use yii\helpers\Console;
 use yii\helpers\FileHelper;
 use yii\base\InvalidConfigException;
-use sagarp1992\groovytrans\services\Scanner;
+use lajax\translatemanagerservices\Scanner;
 
 /**
  * Class for processing PHP and JavaScript files.
@@ -49,13 +49,13 @@ use sagarp1992\groovytrans\services\Scanner;
  * Translation to site language:
  *
  * ~~~
- * $genders = \sagarp1992\groovytrans\helpers\Language::a($this->_GENDERS);
+ * $genders = \lajax\translatemanagerhelpers\Language::a($this->_GENDERS);
  * ~~~
  *
  * Translating to the language of your coice:
  *
  * ~~~
- * $statuses = \sagarp1992\groovytrans\helpers\Language::a($this->_STATUSES, [], 'de-DE');
+ * $statuses = \lajax\translatemanagerhelpers\Language::a($this->_STATUSES, [], 'de-DE');
  * ~~~
  *
  * @author Lajos Molnár <lajax.m@gmail.com>
@@ -75,7 +75,7 @@ abstract class ScannerFile extends \yii\console\controllers\MessageController
     public $scanner;
 
     /**
-     * @var \sagarp1992\groovytrans\Module TranslateManager Module
+     * @var \lajax\translatemanagerModule TranslateManager Module
      */
     public $module;
 

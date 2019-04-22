@@ -1,10 +1,10 @@
 <?php
 
-namespace sagarp1992\groovytrans\controllers\actions;
+namespace lajax\translatemanagercontrollers\actions;
 
 use Yii;
 use yii\web\Response;
-use sagarp1992\groovytrans\models\LanguageSource;
+use lajax\translatemanagermodels\LanguageSource;
 
 /**
  * Deletes an existing LanguageSource model.

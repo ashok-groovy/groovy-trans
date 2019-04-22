@@ -1,10 +1,10 @@
 <?php
 
-namespace sagarp1992\groovytrans\widgets;
+namespace lajax\translatemanagerwidgets;
 use Yii;
 use yii\base\Widget;
-use sagarp1992\groovytrans\Module;
-use sagarp1992\groovytrans\models\Language;
+use lajax\translatemanagerModule;
+use lajax\translatemanagermodels\Language;
 
 
 /**
@@ -13,31 +13,31 @@ use sagarp1992\groovytrans\models\Language;
  * Simple example:
  *
  * ~~~
- * \sagarp1992\groovytrans\widgets\ToggleTranslate::widget();
+ * \lajax\translatemanagerwidgets\ToggleTranslate::widget();
  * ~~~
  *
  * Example for changing position:
  *
  * ~~~
- * \sagarp1992\groovytrans\widgets\ToggleTranslate::widget([
- *  'position' => \sagarp1992\groovytrans\widgets\ToggleTranslate::POSITION_TOP_RIGHT,
+ * \lajax\translatemanagerwidgets\ToggleTranslate::widget([
+ *  'position' => \lajax\translatemanagerwidgets\ToggleTranslate::POSITION_TOP_RIGHT,
  * ]);
  * ~~~
  *
  * Example for changing skin:
  *
  * ~~~
- * \sagarp1992\groovytrans\widgets\ToggleTranslate::widget([
- *  'frontendTranslationAsset' => 'sagarp1992\groovytrans\bundles\FrontendTranslationAsset',
+ * \lajax\translatemanagerwidgets\ToggleTranslate::widget([
+ *  'frontendTranslationAsset' => 'lajax\translatemanagerbundles\FrontendTranslationAsset',
  * ]);
  * ~~~
  *
  * Example for changing template and skin:
  *
  * ~~~
- * \sagarp1992\groovytrans\widgets\ToggleTranslate::widget([
+ * \lajax\translatemanagerwidgets\ToggleTranslate::widget([
  *  'template' => '<a href="javascript:void(0);" id="toggle-translate" class="{position}" data-language="{language}" data-url="{url}"><i></i> {text}</a><div id="translate-manager-div"></div>',
- *  'frontendTranslationAsset' => 'sagarp1992\groovytrans\bundles\FrontendTranslationAsset',
+ *  'frontendTranslationAsset' => 'lajax\translatemanagerbundles\FrontendTranslationAsset',
  * ]);
  * ~~~
  *

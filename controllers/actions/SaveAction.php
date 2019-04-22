@@ -1,11 +1,11 @@
 <?php
 
-namespace sagarp1992\groovytrans\controllers\actions;
+namespace lajax\translatemanagercontrollers\actions;
 
 use Yii;
 use yii\web\Response;
-use sagarp1992\groovytrans\services\Generator;
-use sagarp1992\groovytrans\models\LanguageTranslate;
+use lajax\translatemanagerservices\Generator;
+use lajax\translatemanagermodels\LanguageTranslate;
 
 /**
  * Class for saving translations.

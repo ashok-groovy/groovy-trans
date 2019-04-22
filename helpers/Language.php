@@ -1,10 +1,10 @@
 <?php
 
-namespace sagarp1992\groovytrans\helpers;
+namespace lajax\translatemanagerhelpers;
 
 use Yii;
-use sagarp1992\groovytrans\services\Scanner;
-use sagarp1992\groovytrans\bundles\TranslationPluginAsset;
+use lajax\translatemanagerservices\Scanner;
+use lajax\translatemanagerbundles\TranslationPluginAsset;
 
 /**
  * Language helper.
@@ -83,7 +83,7 @@ class Language
      *          'name' => 'Jenny',
      *      ],
      * ];
-     * $result = \sagarp1992\groovytrans\helpers\Language::a($array, $params);
+     * $result = \lajax\translatemanagerhelpers\Language::a($array, $params);
      * ~~~
      *
      * The result:
@@ -128,7 +128,7 @@ class Language
      *          ]
      *      ]
      * ];
-     * $result = \sagarp1992\groovytrans\helpers\Language::a($array, $params);
+     * $result = \lajax\translatemanagerhelpers\Language::a($array, $params);
      * ~~~
      *
      * The result:
@@ -175,7 +175,7 @@ class Language
      * ~~~
      * 'modules' => [
      *      'translatemanager' => [
-     *          'class' => 'sagarp1992\groovytrans\Module',
+     *          'class' => 'lajax\translatemanagerModule',
      *          'tables' => [
      *              [
      *                  'connection' => 'db',
@@ -211,7 +211,7 @@ class Language
      */
     public static function isEnabledTranslate()
     {
-        return Yii::$app->session->has(\sagarp1992\groovytrans\Module::SESSION_KEY_ENABLE_TRANSLATE);
+        return Yii::$app->session->has(\lajax\translatemanagerModule::SESSION_KEY_ENABLE_TRANSLATE);
     }
 
     /**
@@ -222,7 +222,7 @@ class Language
      */
     public static function saveMessage($message, $category = 'database')
     {
-        $languageSources = \sagarp1992\groovytrans\models\LanguageSource::find()->where(['category' => $category])->all();
+        $languageSources = \lajax\translatemanagermodels\LanguageSource::find()->where(['category' => $category])->all();
 
         $messages = [];
         foreach ($languageSources as $languageSource) {
@@ -230,7 +230,7 @@ class Language
         }
 
         if (empty($messages[$message])) {
-            $languageSource = new \sagarp1992\groovytrans\models\LanguageSource();
+            $languageSource = new \lajax\translatemanagermodels\LanguageSource();
             $languageSource->category = $category;
             $languageSource->message = $message;
             $languageSource->save();
@@ -244,7 +244,7 @@ class Language
      */
     public static function getCategories()
     {
-        $languageSources = \sagarp1992\groovytrans\models\LanguageSource::find()->select('category')->distinct()->all();
+        $languageSources = \lajax\translatemanagermodels\LanguageSource::find()->select('category')->distinct()->all();
 
         $categories = [];
         foreach ($languageSources as $languageSource) {

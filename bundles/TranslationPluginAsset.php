@@ -1,6 +1,6 @@
 <?php
 
-namespace sagarp1992\groovytrans\bundles;
+namespace lajax\translatemanagerbundles;
 
 use yii\web\AssetBundle;
 
@@ -30,6 +30,6 @@ class TranslationPluginAsset extends AssetBundle
      * @inheritdoc
      */
     public $depends = [
-        'sagarp1992\groovytrans\bundles\LanguageItemPluginAsset',
+        'lajax\translatemanagerbundles\LanguageItemPluginAsset',
     ];
 }

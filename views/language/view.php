@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 use yii\helpers\Url;
 /* @var $this yii\web\View */
-/* @var $model sagarp1992\groovytrans\models\Language */
+/* @var $model lajax\translatemanagermodels\Language */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('language', 'Languages'), 'url' => ['list']];

@@ -16,7 +16,7 @@ use yii\web\Response;
  * ~~~
  * 'modules' => [
  *     'translatemanager' => [
- *         'class' => 'sagarp1992\groovytrans\Module',
+ *         'class' => 'lajax\translatemanagerModule',
  *     ],
  * ],
  * ~~~
@@ -26,7 +26,7 @@ use yii\web\Response;
  * ~~~
  * 'modules' => [
  *     'translatemanager' => [
- *         'class' => 'sagarp1992\groovytrans\Module',
+ *         'class' => 'lajax\translatemanagerModule',
  *         'root' => '@app',               // The root directory of the project scan.
  *         'layout' => 'language',         // Name of the used layout. If using own layout use 'null'.
  *         'allowedIPs' => ['127.0.0.1'],  // IP addresses from which the translation interface is accessible.
@@ -96,7 +96,7 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'sagarp1992\groovytrans\controllers';
+    public $controllerNamespace = 'lajax\translatemanagercontrollers';
 
     /**
      * @inheritdoc

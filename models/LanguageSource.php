@@ -6,7 +6,7 @@
  * @since 1.0
  */
 
-namespace sagarp1992\groovytrans\models;
+namespace lajax\translatemanagermodels;
 
 use Yii;
 

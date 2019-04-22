@@ -1,6 +1,6 @@
 <?php
 
-namespace sagarp1992\groovytrans\bundles;
+namespace lajax\translatemanagerbundles;
 
 use yii\web\AssetBundle;
 

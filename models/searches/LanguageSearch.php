@@ -6,11 +6,11 @@
  * @since 1.0
  */
 
-namespace sagarp1992\groovytrans\models\searches;
+namespace lajax\translatemanagermodels\searches;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use sagarp1992\groovytrans\models\Language;
+use lajax\translatemanagermodels\Language;
 
 /**
  * LanguageSearch represents the model behind the search form about `common\models\Language`.

@@ -6,7 +6,7 @@
  * @since 1.0
  */
 
-namespace sagarp1992\groovytrans\models;
+namespace lajax\translatemanagermodels;
 
 use Yii;
 
@@ -156,7 +156,7 @@ class Language extends \yii\db\ActiveRecord
      */
     public static function getStatusNames()
     {
-        return \sagarp1992\groovytrans\helpers\Language::a(self::$_CONDITIONS);
+        return \lajax\translatemanagerhelpers\Language::a(self::$_CONDITIONS);
     }
 
     /**

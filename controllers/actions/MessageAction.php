@@ -1,10 +1,10 @@
 <?php
 
-namespace sagarp1992\groovytrans\controllers\actions;
+namespace lajax\translatemanagercontrollers\actions;
 
 use Yii;
-use sagarp1992\groovytrans\models\LanguageSource;
-use sagarp1992\groovytrans\models\LanguageTranslate;
+use lajax\translatemanagermodels\LanguageSource;
+use lajax\translatemanagermodels\LanguageTranslate;
 
 /**
  * Class for returning messages in the given language

@@ -1,10 +1,10 @@
 <?php
 
-namespace sagarp1992\groovytrans\controllers\actions;
+namespace lajax\translatemanagercontrollers\actions;
 
 use Yii;
 use yii\widgets\ActiveForm;
-use sagarp1992\groovytrans\models\Language;
+use lajax\translatemanagermodels\Language;
 
 /**
  * Creates a new Language model.

@@ -7,12 +7,12 @@
 use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use sagarp1992\groovytrans\models\Language;
+use lajax\translatemanagermodels\Language;
 use yii\widgets\Pjax;
 
 /* @var $this \yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-/* @var $searchModel sagarp1992\groovytrans\models\searches\LanguageSearch */
+/* @var $searchModel lajax\translatemanagermodels\searches\LanguageSearch */
 
 $this->title = Yii::t('language', 'List of languages');
 $this->params['breadcrumbs'][] = $this->title;

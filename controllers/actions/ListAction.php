@@ -1,11 +1,11 @@
 <?php
 
-namespace sagarp1992\groovytrans\controllers\actions;
+namespace lajax\translatemanagercontrollers\actions;
 
 use Yii;
-use sagarp1992\groovytrans\models\searches\LanguageSearch;
-use sagarp1992\groovytrans\bundles\LanguageAsset;
-use sagarp1992\groovytrans\bundles\LanguagePluginAsset;
+use lajax\translatemanagermodels\searches\LanguageSearch;
+use lajax\translatemanagerbundles\LanguageAsset;
+use lajax\translatemanagerbundles\LanguagePluginAsset;
 
 /**
  * Class that creates a list of languages.

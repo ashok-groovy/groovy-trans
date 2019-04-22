@@ -1,9 +1,9 @@
 <?php
 
-namespace sagarp1992\groovytrans\commands;
+namespace lajax\translatemanagercommands;
 
-use sagarp1992\groovytrans\services\Optimizer;
-use sagarp1992\groovytrans\services\Scanner;
+use lajax\translatemanagerservices\Optimizer;
+use lajax\translatemanagerservices\Scanner;
 use yii\console\Controller;
 use yii\helpers\Console;
 

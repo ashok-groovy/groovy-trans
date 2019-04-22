@@ -1,11 +1,11 @@
 <?php
 
-namespace sagarp1992\groovytrans\services;
+namespace lajax\translatemanagerservices;
 
 use Yii;
 use yii\helpers\Json;
 use yii\base\InvalidConfigException;
-use sagarp1992\groovytrans\models\LanguageSource;
+use lajax\translatemanagermodels\LanguageSource;
 
 /**
  * Generator class for producing JavaScript files containing language elements.
@@ -37,7 +37,7 @@ class Generator
     private $_template = 'var languageItems=(function(){var _languages={language_items};return{getLanguageItems:function(){return _languages;}};})();';
 
     /**
-     * @param \sagarp1992\groovytrans\Module $module
+     * @param \lajax\translatemanagerModule $module
      * @param string $language_id Language of the file to be generated.
      */
     public function __construct($module, $language_id)

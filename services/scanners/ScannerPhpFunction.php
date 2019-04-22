@@ -1,6 +1,6 @@
 <?php
 
-namespace sagarp1992\groovytrans\services\scanners;
+namespace lajax\translatemanagerservices\scanners;
 
 use yii\helpers\Console;
 

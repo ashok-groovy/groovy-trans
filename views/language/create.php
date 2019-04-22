@@ -6,7 +6,7 @@
  */
 
 /* @var $this yii\web\View */
-/* @var $model sagarp1992\groovytrans\models\Language */
+/* @var $model lajax\translatemanagermodels\Language */
 use yii\helpers\Url;
 $this->title = Yii::t('language', 'Create {modelClass}', [
     'modelClass' => 'Language',
