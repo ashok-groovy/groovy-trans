@@ -52,7 +52,7 @@ class Language
             $subData  = \Yii::$app->db->createCommand($subSql)->queryOne();      
             $sid       =  !empty($subData['id'])?$subData['id']:"";
 
-            $sql      = 'SELECT `translation` FROM `language_translate` WHERE language_translate.language = "'.$language.'" AND id = '.$sid;
+            $sql      = 'SELECT `translation` FROM `language_translate` WHERE language_translate.language = "'.$language.'" AND id = "'.$sid.'"';
             $data     = \Yii::$app->db->createCommand($sql)->queryOne();           
             $message = !empty($data['translation'])?$data['translation']:$message;
             
