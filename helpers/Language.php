@@ -47,8 +47,12 @@ class Language
     public static function t($category, $message, $params = [], $language = null)
     {
             $language = $language ? $language : Yii::$app->language;
-            $subSql   = '(SELECT id FROM `language_source` WHERE `language_source`.message="'.$message.'")';
-            $sql      = 'SELECT `translation` FROM `language_translate` WHERE language_translate.language = "'.$language.'" AND id = '.$subSql;
+            $subSql   = 'SELECT id FROM `language_source` WHERE `language_source`.message="'.$message.'"';
+            
+            $subData  = \Yii::$app->db->createCommand($subSql)->queryOne();      
+            $sid       =  !empty($subData['id'])?$subData['id']:"";
+
+            $sql      = 'SELECT `translation` FROM `language_translate` WHERE language_translate.language = "'.$language.'" AND id = '.$sid;
             $data     = \Yii::$app->db->createCommand($sql)->queryOne();           
             $message = !empty($data['translation'])?$data['translation']:$message;
             
