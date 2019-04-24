@@ -6,10 +6,10 @@
  */
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use lajax\translatemanagermodels\Language;
+use lajax\translatemanager\models\Language;
 
 /* @var $this yii\web\View */
-/* @var $model lajax\translatemanagermodels\Language */
+/* @var $model lajax\translatemanager\models\Language */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <div class="row">

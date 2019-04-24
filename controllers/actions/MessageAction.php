@@ -1,10 +1,10 @@
 <?php
 
-namespace lajax\translatemanagercontrollers\actions;
+namespace lajax\translatemanager\controllers\actions;
 
 use Yii;
-use lajax\translatemanagermodels\LanguageSource;
-use lajax\translatemanagermodels\LanguageTranslate;
+use lajax\translatemanager\models\LanguageSource;
+use lajax\translatemanager\models\LanguageTranslate;
 
 /**
  * Class for returning messages in the given language

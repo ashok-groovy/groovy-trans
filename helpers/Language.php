@@ -1,10 +1,10 @@
 <?php
 
-namespace lajax\translatemanagerhelpers;
+namespace lajax\translatemanager\helpers;
 
 use Yii;
-use lajax\translatemanagerservices\Scanner;
-use lajax\translatemanagerbundles\TranslationPluginAsset;
+use lajax\translatemanager\services\Scanner;
+use lajax\translatemanager\bundles\TranslationPluginAsset;
 
 /**
  * Language helper.
@@ -87,7 +87,7 @@ class Language
      *          'name' => 'Jenny',
      *      ],
      * ];
-     * $result = \lajax\translatemanagerhelpers\Language::a($array, $params);
+     * $result = \ lajax\translatemanager\helpers\Language::a($array, $params);
      * ~~~
      *
      * The result:
@@ -132,7 +132,7 @@ class Language
      *          ]
      *      ]
      * ];
-     * $result = \lajax\translatemanagerhelpers\Language::a($array, $params);
+     * $result = \ lajax\translatemanager\helpers\Language::a($array, $params);
      * ~~~
      *
      * The result:
@@ -179,7 +179,7 @@ class Language
      * ~~~
      * 'modules' => [
      *      'translatemanager' => [
-     *          'class' => 'lajax\translatemanagerModule',
+     *          'class' => ' lajax\translatemanager\Module',
      *          'tables' => [
      *              [
      *                  'connection' => 'db',
@@ -215,7 +215,7 @@ class Language
      */
     public static function isEnabledTranslate()
     {
-        return Yii::$app->session->has(\lajax\translatemanagerModule::SESSION_KEY_ENABLE_TRANSLATE);
+        return Yii::$app->session->has(\ lajax\translatemanager\Module::SESSION_KEY_ENABLE_TRANSLATE);
     }
 
     /**
@@ -226,7 +226,7 @@ class Language
      */
     public static function saveMessage($message, $category = 'database')
     {
-        $languageSources = \lajax\translatemanagermodels\LanguageSource::find()->where(['category' => $category])->all();
+        $languageSources = \ lajax\translatemanager\models\LanguageSource::find()->where(['category' => $category])->all();
 
         $messages = [];
         foreach ($languageSources as $languageSource) {
@@ -234,7 +234,7 @@ class Language
         }
 
         if (empty($messages[$message])) {
-            $languageSource = new \lajax\translatemanagermodels\LanguageSource();
+            $languageSource = new \ lajax\translatemanager\models\LanguageSource();
             $languageSource->category = $category;
             $languageSource->message = $message;
             $languageSource->save();
@@ -248,7 +248,7 @@ class Language
      */
     public static function getCategories()
     {
-        $languageSources = \lajax\translatemanagermodels\LanguageSource::find()->select('category')->distinct()->all();
+        $languageSources = \ lajax\translatemanager\models\LanguageSource::find()->select('category')->distinct()->all();
 
         $categories = [];
         foreach ($languageSources as $languageSource) {

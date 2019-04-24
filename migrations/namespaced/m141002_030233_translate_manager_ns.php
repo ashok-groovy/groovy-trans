@@ -1,6 +1,6 @@
 <?php
 
-namespace lajax\translatemanagermigrations\namespaced;
+namespace lajax\translatemanager\migrations\namespaced;
 
 require_once dirname(__DIR__) . '/m141002_030233_translate_manager.php';
 

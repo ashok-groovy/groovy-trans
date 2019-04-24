@@ -6,11 +6,11 @@
  * @since 1.0
  */
 
-namespace lajax\translatemanagermodels\searches;
+namespace lajax\translatemanager\models\searches;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use lajax\translatemanagermodels\Language;
+use lajax\translatemanager\models\Language;
 
 /**
  * LanguageSearch represents the model behind the search form about `common\models\Language`.

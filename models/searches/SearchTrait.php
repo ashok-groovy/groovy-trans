@@ -1,6 +1,6 @@
 <?php
 
-namespace lajax\translatemanagermodels\searches;
+namespace lajax\translatemanager\models\searches;
 
 /**
  * Model search helper trait. Helps with common search tasks.

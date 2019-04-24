@@ -1,9 +1,9 @@
 <?php
 
-namespace lajax\translatemanagerservices;
+namespace lajax\translatemanager\services;
 
 use yii\helpers\Console;
-use lajax\translatemanagermodels\LanguageSource;
+use lajax\translatemanager\models\LanguageSource;
 
 /**
  * Optimizer class for optimizing database tables

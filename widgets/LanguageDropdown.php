@@ -1,10 +1,10 @@
 <?php
 
-namespace lajax\translatemanagerwidgets;
+namespace lajax\translatemanager\widgets;
 use Yii;
 use yii\base\Widget;
-use lajax\translatemanagerModule;
-use lajax\translatemanagermodels\Language;
+use lajax\translatemanager\Module;
+use lajax\translatemanager\models\Language;
 
 
 /**
@@ -13,31 +13,31 @@ use lajax\translatemanagermodels\Language;
  * Simple example:
  *
  * ~~~
- * \lajax\translatemanagerwidgets\ToggleTranslate::widget();
+ * \ lajax\translatemanager\widgets\ToggleTranslate::widget();
  * ~~~
  *
  * Example for changing position:
  *
  * ~~~
- * \lajax\translatemanagerwidgets\ToggleTranslate::widget([
- *  'position' => \lajax\translatemanagerwidgets\ToggleTranslate::POSITION_TOP_RIGHT,
+ * \ lajax\translatemanager\widgets\ToggleTranslate::widget([
+ *  'position' => \ lajax\translatemanager\widgets\ToggleTranslate::POSITION_TOP_RIGHT,
  * ]);
  * ~~~
  *
  * Example for changing skin:
  *
  * ~~~
- * \lajax\translatemanagerwidgets\ToggleTranslate::widget([
- *  'frontendTranslationAsset' => 'lajax\translatemanagerbundles\FrontendTranslationAsset',
+ * \ lajax\translatemanager\widgets\ToggleTranslate::widget([
+ *  'frontendTranslationAsset' => ' lajax\translatemanager\bundles\FrontendTranslationAsset',
  * ]);
  * ~~~
  *
  * Example for changing template and skin:
  *
  * ~~~
- * \lajax\translatemanagerwidgets\ToggleTranslate::widget([
+ * \ lajax\translatemanager\widgets\ToggleTranslate::widget([
  *  'template' => '<a href="javascript:void(0);" id="toggle-translate" class="{position}" data-language="{language}" data-url="{url}"><i></i> {text}</a><div id="translate-manager-div"></div>',
- *  'frontendTranslationAsset' => 'lajax\translatemanagerbundles\FrontendTranslationAsset',
+ *  'frontendTranslationAsset' => ' lajax\translatemanager\bundles\FrontendTranslationAsset',
  * ]);
  * ~~~
  *

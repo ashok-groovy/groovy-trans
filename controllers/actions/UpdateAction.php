@@ -1,6 +1,6 @@
 <?php
 
-namespace lajax\translatemanagercontrollers\actions;
+namespace lajax\translatemanager\controllers\actions;
 
 use Yii;
 use yii\widgets\ActiveForm;

@@ -6,7 +6,7 @@
  */
 
 /* @var $this yii\web\View */
-/* @var $model lajax\translatemanagermodels\Language */
+/* @var $model lajax\translatemanager\models\Language */
 use yii\helpers\Url;
 $this->title = Yii::t('language', 'Update {modelClass}: ', [
     'modelClass' => 'Language',

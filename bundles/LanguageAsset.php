@@ -1,6 +1,6 @@
 <?php
 
-namespace lajax\translatemanagerbundles;
+namespace lajax\translatemanager\bundles;
 
 use yii\web\AssetBundle;
 

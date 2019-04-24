@@ -1,6 +1,6 @@
 <?php
 
-namespace lajax\translatemanagercontrollers\actions;
+namespace lajax\translatemanager\controllers\actions;
 
 /**
  * Displays a single Language model.

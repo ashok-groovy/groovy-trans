@@ -1,6 +1,6 @@
 <?php
 
-namespace lajax\translatemanagerbundles;
+namespace lajax\translatemanager\bundles;
 
 use yii\web\AssetBundle;
 
@@ -32,6 +32,6 @@ class FrontendTranslationPluginAsset extends AssetBundle
     public $depends = [
         'yii\web\JqueryAsset',
         'yii\jui\JuiAsset',
-        'lajax\translatemanagerbundles\TranslationPluginAsset',
+        ' lajax\translatemanager\bundles\TranslationPluginAsset',
     ];
 }
