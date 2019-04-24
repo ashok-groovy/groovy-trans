@@ -28,7 +28,7 @@ use lajax\translatemanager\models\Language;
  *
  * ~~~
  * \ lajax\translatemanager\widgets\ToggleTranslate::widget([
- *  'frontendTranslationAsset' => ' lajax\translatemanager\bundles\FrontendTranslationAsset',
+ *  'frontendTranslationAsset' => 'lajax\translatemanager\bundles\FrontendTranslationAsset',
  * ]);
  * ~~~
  *
@@ -37,7 +37,7 @@ use lajax\translatemanager\models\Language;
  * ~~~
  * \ lajax\translatemanager\widgets\ToggleTranslate::widget([
  *  'template' => '<a href="javascript:void(0);" id="toggle-translate" class="{position}" data-language="{language}" data-url="{url}"><i></i> {text}</a><div id="translate-manager-div"></div>',
- *  'frontendTranslationAsset' => ' lajax\translatemanager\bundles\FrontendTranslationAsset',
+ *  'frontendTranslationAsset' => 'lajax\translatemanager\bundles\FrontendTranslationAsset',
  * ]);
  * ~~~
  *

@@ -14,7 +14,7 @@ use Yii;
  * 'bootstrap' => ['translatemanager'],
  * 'component' => [
  *      'translatemanager' => [
- *          'class' => ' lajax\translatemanager\Component'
+ *          'class' => 'lajax\translatemanager\Component'
  *      ]
  * ]
  * ~~~

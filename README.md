@@ -46,7 +46,7 @@ Or use the [namespaced migration](http://www.yiiframework.com/doc-2.0/guide-db-m
     'migrate' => [
         'class' => 'yii\console\controllers\MigrateController',
         'migrationNamespaces' => [
-            ' lajax\translatemanager\migrations\namespaced',
+            'lajax\translatemanager\migrations\namespaced',
         ],
     ],
 ],
@@ -89,7 +89,7 @@ Simple example:
 ```php
 'modules' => [
     'translatemanager' => [
-        'class' => ' lajax\translatemanager\Module',
+        'class' => 'lajax\translatemanager\Module',
     ],
 ],
 ```
@@ -98,7 +98,7 @@ A more complex example including database table with multilingual support is bel
 ```php
 'modules' => [
     'translatemanager' => [
-        'class' => ' lajax\translatemanager\Module',
+        'class' => 'lajax\translatemanager\Module',
         'root' => '@app',               // The root directory of the project scan.
         'scanRootParentDirectory' => true, // Whether scan the defined `root` parent directory, or the folder itself.
                                            // IMPORTANT: for detailed instructions read the chapter about root configuration.
@@ -219,7 +219,7 @@ DbManager:
 'bootstrap' => ['translatemanager'],
 'components' => [
     'translatemanager' => [
-        'class' => ' lajax\translatemanager\Component'
+        'class' => 'lajax\translatemanager\Component'
     ]
 ]
 ```
@@ -267,8 +267,8 @@ A more complex example for displaying the button:
 \ lajax\translatemanager\widgets\ToggleTranslate::widget([
  'position' => \ lajax\translatemanager\widgets\ToggleTranslate::POSITION_TOP_RIGHT,
  'template' => '<a href="javascript:void(0);" id="toggle-translate" class="{position}" data-language="{language}" data-url="{url}"><i></i> {text}</a><div id="translate-manager-div"></div>',
- 'frontendTranslationAsset' => ' lajax\translatemanager\bundles\FrontendTranslationAsset',
- 'frontendTranslationPluginAsset' => ' lajax\translatemanager\bundles\FrontendTranslationPluginAsset',
+ 'frontendTranslationAsset' => 'lajax\translatemanager\bundles\FrontendTranslationAsset',
+ 'frontendTranslationPluginAsset' => 'lajax\translatemanager\bundles\FrontendTranslationPluginAsset',
 ]);
 ```
 

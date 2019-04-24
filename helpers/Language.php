@@ -179,7 +179,7 @@ class Language
      * ~~~
      * 'modules' => [
      *      'translatemanager' => [
-     *          'class' => ' lajax\translatemanager\Module',
+     *          'class' => 'lajax\translatemanager\Module',
      *          'tables' => [
      *              [
      *                  'connection' => 'db',
