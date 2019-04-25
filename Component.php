@@ -1,6 +1,5 @@
 <?php
-
-namespace sagarp1992\groovytrans;
+namespace lajax\translatemanager;
 
 use Yii;
 
