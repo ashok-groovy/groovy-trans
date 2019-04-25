@@ -215,7 +215,7 @@ class Language
      */
     public static function isEnabledTranslate()
     {
-        return Yii::$app->session->has(\ lajax\translatemanager\Module::SESSION_KEY_ENABLE_TRANSLATE);
+        return Yii::$app->session->has(\lajax\translatemanager\Module::SESSION_KEY_ENABLE_TRANSLATE);
     }
 
     /**
@@ -226,7 +226,7 @@ class Language
      */
     public static function saveMessage($message, $category = 'database')
     {
-        $languageSources = \ lajax\translatemanager\models\LanguageSource::find()->where(['category' => $category])->all();
+        $languageSources = \lajax\translatemanager\models\LanguageSource::find()->where(['category' => $category])->all();
 
         $messages = [];
         foreach ($languageSources as $languageSource) {
@@ -234,7 +234,7 @@ class Language
         }
 
         if (empty($messages[$message])) {
-            $languageSource = new \ lajax\translatemanager\models\LanguageSource();
+            $languageSource = new \lajax\translatemanager\models\LanguageSource();
             $languageSource->category = $category;
             $languageSource->message = $message;
             $languageSource->save();
@@ -248,7 +248,7 @@ class Language
      */
     public static function getCategories()
     {
-        $languageSources = \ lajax\translatemanager\models\LanguageSource::find()->select('category')->distinct()->all();
+        $languageSources = \lajax\translatemanager\models\LanguageSource::find()->select('category')->distinct()->all();
 
         $categories = [];
         foreach ($languageSources as $languageSource) {
