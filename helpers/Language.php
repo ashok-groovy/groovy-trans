@@ -55,18 +55,7 @@ class Language
             $sql      = 'SELECT `translation` FROM `language_translate` WHERE language_translate.language = "'.$language.'" AND id = "'.$sid.'"';
             $data     = \Yii::$app->db->createCommand($sql)->queryOne();           
             $message = !empty($data['translation'])?$data['translation']:$message;
-            
-            if (self::isEnabledTranslate()) {
-                return strtr(self::$_template, [
-                    '{language_id}' => $language ? $language : Yii::$app->language,
-                    '{category}' => $category,
-                    '{message}' => $message,
-                    '{params}' => \yii\helpers\Html::encode(\yii\helpers\Json::encode($params)),
-                    '{hash}' => md5($message),
-                ]);
-            } else {
-                return Yii::t($category, $message, $params, $language);
-            }
+            return Yii::t($category, $message, $params, $language);
     }
 
     /**
