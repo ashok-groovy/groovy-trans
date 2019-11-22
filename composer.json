@@ -5,13 +5,13 @@
     "keywords": ["yii2", "extension", "translate", "language", "module"],
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/sagarp1992/groovy-trans/issues?state=open",
-		"source": "https://github.com/sagarp1992/groovy-trans"
+        "issues": "https://github.com/agsachdev/groovy-trans/issues?state=open",
+		"source": "https://github.com/agsachdev/groovy-trans"
 	},
     "authors": [
         {
-            "name": "Sagar",
-            "email": "sagarpatel8153@gmail.com"
+            "name": "Ashok",
+            "email": "agsachdev@groovweb.firm.in"
         }
     ],
     "require": {
