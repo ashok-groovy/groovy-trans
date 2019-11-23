@@ -7,60 +7,37 @@
 
 /* @var $this yii\web\View */
 /* @var $model lajax\translatemanager\models\Language */
+
+use yii\bootstrap\Html;
 use yii\helpers\Url;
+use yii\widgets\Breadcrumbs;
+
 $this->title = Yii::t('language', 'Create {modelClass}', [
     'modelClass' => 'Language',
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('language', 'Languages'), 'url' => ['list']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="row">
-    <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
-    <div class="breadcrumbs-dark pb-0 pt-4" id="breadcrumbs-wrapper">
-          <!-- Search for small screen-->
-          <div class="container">
-            <div class="row">
-            <div class="col s10 m6 l6">
-                    <h5 class="breadcrumbs-title mt-0 mb-0"><?= $this->title;?></h5>
-                    <?php 
-                    echo \yii\widgets\Breadcrumbs::widget([
-                        'itemTemplate' => '<li class="breadcrumb-item">{link}</li>',
-                        'tag' => 'ol',
-                        'options' => [
-                            'class' => 'breadcrumbs mb-0'
-                        ],
+<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+    <div class="kt-subheader kt-grid__item" id="kt_subheader">
+        <div class="kt-container ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title"><?= Html::encode($this->title) ?></h3>
+                <?php
+                    echo Breadcrumbs::widget([
+                        'tag'		=>'div', // container tag
+                        'itemTemplate' => ' <span class="kt-subheader__breadcrumbs-separator"></span> {link}', // template for all links
                         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                        'options'=>["class"=>"kt-subheader__breadcrumbs"],
+                        'activeItemTemplate'	=>'<span class="kt-subheader__breadcrumbs-separator"></span> <span class="inac">{link}</span>',
                     ]);
-                    ?>
-            </div>
-              <div class="col s2 m6 l6">
-                <a class="btn dropdown-settings waves-effect waves-light breadcrumbs-btn right" href="<?= Url::toRoute(['list'], $schema = true)?>">
-                <i class="material-icons hide-on-med-and-up">settings</i><span class="hide-on-small-onl"><< Back</span>
-                </a>                            
-              </div>
-            </div>
-          </div>
-    </div>  
-    <div class="col s12">
-        <div class="container">
-            <div class="section">               
-                <div class="row">
-                    <div class="col s12 m12 l12">
-                        <div id="icon-sizes" class="card card-default">
-                            <div class="card-content">
-                                <div class="row">
-                                    <div class="col s12 m12 l12">
-                                        <?= $this->render('_form', [
-                                            'model' => $model,
-                                        ]) ?>
-                                     </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                ?>
             </div>
         </div>
     </div>
- </div>
+    <div class="kt-container  kt-grid__item kt-grid__item--fluid">
+        <?= $this->render('_form', [
+            'model' => $model
+        ]) ?>
+    </div>
+</div>

@@ -18,100 +18,80 @@ $this->title = Yii::t('language', 'List of languages');
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
-<div class="row">
-    <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
-    <div class="breadcrumbs-dark pb-0 pt-4" id="breadcrumbs-wrapper">
-          <!-- Search for small screen-->
-          <div class="container">
-            <div class="row">
-            <div class="col s10 m6 l6">
-                    <h5 class="breadcrumbs-title mt-0 mb-0"><?= $this->title;?></h5>
-                    <?php 
-                    echo \yii\widgets\Breadcrumbs::widget([
-                        'itemTemplate' => '<li class="breadcrumb-item">{link}</li>',
-                        'tag' => 'ol',
-                        'options' => [
-                            'class' => 'breadcrumbs mb-0'
-                        ],
-                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    ]);
-                    ?>
+<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+    <div class="kt-subheader kt-grid__item" id="kt_subheader">
+        <div class="kt-container ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title"><?= Html::encode($this->title) ?></h3>
             </div>
-              <div class="col s2 m6 l6">
-                <a class="btn dropdown-settings waves-effect waves-light breadcrumbs-btn right" href="<?= Url::toRoute(['create'], $schema = true)?>">
-                <i class="material-icons hide-on-med-and-up">settings</i><span class="hide-on-small-onl"><i class="material-icons left">add</i> ADD NEW LANGUAGE</span>
-                </a>                            
-              </div>
+            <div class="kt-subheader__toolbar">
+                <div class="kt-subheader__wrapper">
+                    
+                </div>
             </div>
-          </div>
-    </div>  
-    <div class="col s12">
-        <div class="container">
-            <div class="section">               
-                <div class="row">
-                    <div class="col s12 m12 l12">
-                        <div id="icon-sizes" class="card card-default">
-                            <div class="card-content">
-                                <div class="row">
-                                <?php
-                                    Pjax::begin([
-                                        'id' => 'languages',
-                                    ]);
-                                    echo GridView::widget([
-                                        'dataProvider' => $dataProvider,
-                                        'filterModel' => $searchModel,
-                                        'columns' => [
-                                            ['class' => 'yii\grid\SerialColumn'],
-                                            'language_id',
-                                            'name_ascii',
-                                            [
-                                                'format' => 'raw',
-                                                'filter' => Language::getStatusNames(),
-                                                'attribute' => 'status',
-                                                'filterInputOptions' => ['class' => 'form-control', 'id' => 'status'],
-                                                'label' => Yii::t('language', 'Status'),
-                                                'content' => function ($language) {
-                                                    return Html::activeDropDownList($language, 'status', Language::getStatusNames(), ['class' => 'status', 'id' => $language->language_id, 'data-url' => Yii::$app->urlManager->createUrl('/translatemanager/language/change-status')]);
+        </div>
+    </div>
+    <div class="kt-container  kt-grid__item kt-grid__item--fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="kt-portlet">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                All Users
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="kt-form">
+                        <div class="kt-portlet__body">
+                            <?php
+                                Pjax::begin([
+                                    'id' => 'languages',
+                                ]);
+                                echo GridView::widget([
+                                    'dataProvider' => $dataProvider,
+                                    'filterModel' => $searchModel,
+                                    'columns' => [
+                                        // ['class' => 'yii\grid\SerialColumn'],
+                                        // 'language_id',
+                                        'name_ascii',
+                                        [
+                                            'format' => 'raw',
+                                            'filter' => Language::getStatusNames(),
+                                            'attribute' => 'status',
+                                            'filterInputOptions' => ['class' => 'form-control', 'id' => 'status'],
+                                            'label' => Yii::t('language', 'Status'),
+                                            'content' => function ($language) {
+                                                return Html::activeDropDownList($language, 'status', Language::getStatusNames(), ['class' => 'form-control status', 'id' => $language->language_id, 'data-url' => Yii::$app->urlManager->createUrl('/translatemanager/language/change-status')]);
+                                            },
+                                        ],
+                                        [
+                                            'format' => 'raw',
+                                            'attribute' => Yii::t('language', 'Statistic'),
+                                            'content' => function ($language) {
+                                                return '<span class="statistic"><span style="width:' . $language->gridStatistic . '%"></span><i>' . $language->gridStatistic . '%</i></span>';
+                                            },
+                                        ],
+                                        [
+                                            'class' => 'yii\grid\ActionColumn',
+                                            'template' => '{translate} {view} {update} {delete}',
+                                            'header'=>'Action',
+                                            'buttons' => [
+                                                'translate' => function ($url, $model, $key) {
+                                                    return Html::a('Translate', ['language/translate', 'language_id' => $model->language_id], [
+                                                        'title' => Yii::t('language', 'Translate'),'class'=>'btn btn-sm btn-success',
+                                                        'data-pjax' => '0',
+                                                    ]);
                                                 },
-                                            ],
-                                            [
-                                                'format' => 'raw',
-                                                'attribute' => Yii::t('language', 'Statistic'),
-                                                'content' => function ($language) {
-                                                    return '<span class="statistic"><span style="width:' . $language->gridStatistic . '%"></span><i>' . $language->gridStatistic . '%</i></span>';
-                                                },
-                                            ],
-                                            [
-                                                'class' => 'yii\grid\ActionColumn',
-                                                'template' => '{translate} {view} {update} {delete}',
-                                                'header'=>'Action',
-                                                'buttons' => [
-                                                    'translate' => function ($url, $model, $key) {
-                                                        return Html::a('Translate', ['language/translate', 'language_id' => $model->language_id], [
-                                                            'title' => Yii::t('language', 'Translate'),'class'=>'btn btn-lg btn-success',
-                                                            'data-pjax' => '0',
-                                                        ]);
-                                                    },
-                                                    'view'=>function ($url) {
-                                                        return Html::a('<i class="material-icons">search</i>', $url, ['class'=>'btn btn-lg btn-blue']);
-                                                    },
-                                                    'update'=>function ($url) {
-                                                        return Html::a('<i class="material-icons">edit</i>', $url, ['class'=>'btn btn-lg btn-warning']);
-                                                    },
-                                                    'delete' => function($url, $model) {
-                                                        return Html::a('<i class="material-icons">delete</i>', ['delete', 'id' => $model->language_id], ['title' => 'Delete', 'class' => 'btn btn-lg btn-warning', 'data' => ['confirm' => 'Are you absolutely sure ? You will lose all the information about this user with this action.', 'method' => 'post', 'data-pjax' => false],]);
-                                                    }
-                                                ],
                                             ],
                                         ],
-                                    ]);
-                                    Pjax::end();
-                                    ?>
-                                </div>
+                                    ],
+                                ]);
+                                Pjax::end(); ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-</div>

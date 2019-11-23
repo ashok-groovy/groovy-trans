@@ -12,13 +12,18 @@ use yii\helpers\Url;
 /* @var $oldDataProvider \yii\data\ArrayDataProvider */
 
 ?>
-<?php if ($oldDataProvider->totalCount > 1) : ?>
+<div class="col-md-12">
+    
+    <div class="col-12 text-right">
+    <?php if ($oldDataProvider->totalCount > 1) : ?>
+        <?= Html::button(Yii::t('language', 'Select all'), ['id' => 'select-all', 'class' => 'btn btn-primary']) ?>
 
-    <?= Html::button(Yii::t('language', 'Select all'), ['id' => 'select-all', 'class' => 'btn btn-primary']) ?>
+        <?= Html::button(Yii::t('language', 'Delete selected'), ['id' => 'delete-selected', 'class' => 'btn btn-danger']) ?>
 
-    <?= Html::button(Yii::t('language', 'Delete selected'), ['id' => 'delete-selected', 'class' => 'btn btn-danger']) ?>
+        <?php endif ?>
+    </div>
+</div>
 
-<?php endif ?>
 
 <?php if ($oldDataProvider->totalCount > 0) : ?>
 

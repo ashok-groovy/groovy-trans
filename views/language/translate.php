@@ -12,6 +12,7 @@ use yii\grid\GridView;
 use yii\widgets\ActiveForm;
 use lajax\translatemanager\helpers\Language;
 use lajax\translatemanager\models\Language as Lang;
+use yii\widgets\Breadcrumbs;
 
 /* @var $this \yii\web\View */
 /* @var $language_id string */
@@ -23,106 +24,103 @@ $this->title = Yii::t('language', 'Translation into {language_id}', ['language_i
 $this->params['breadcrumbs'][] = ['label' => Yii::t('language', 'Languages'), 'url' => ['list']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="row">
-    <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
-    <div class="breadcrumbs-dark pb-0 pt-4" id="breadcrumbs-wrapper">
-          <!-- Search for small screen-->
-          <div class="container">
-            <div class="row">
-            <div class="col s10 m6 l6">
-                    <h5 class="breadcrumbs-title mt-0 mb-0"><?= $this->title;?></h5>
-                    <?php 
-                    echo \yii\widgets\Breadcrumbs::widget([
-                        'itemTemplate' => '<li class="breadcrumb-item">{link}</li>',
-                        'tag' => 'ol',
-                        'options' => [
-                            'class' => 'breadcrumbs mb-0'
-                        ],
+<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+    <div class="kt-subheader kt-grid__item" id="kt_subheader">
+        <div class="kt-container ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title"><?= Html::encode($this->title) ?></h3>
+                <?php
+                    echo Breadcrumbs::widget([
+                        'tag'		=>'div', // container tag
+                        'itemTemplate' => ' <span class="kt-subheader__breadcrumbs-separator"></span> {link}', // template for all links
                         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                        'options'=>["class"=>"kt-subheader__breadcrumbs"],
+                        'activeItemTemplate'	=>'<span class="kt-subheader__breadcrumbs-separator"></span> <span class="inac">{link}</span>',
                     ]);
-                    ?>
+                ?>
             </div>
-              <div class="col s2 m6 l6">
-                <a class="btn dropdown-settings waves-effect waves-light breadcrumbs-btn right" href="<?= Url::toRoute(['list'], $schema = true)?>">
-                <i class="material-icons hide-on-med-and-up">settings</i><span class="hide-on-small-onl"><< Back</span>
-                </a>                            
-              </div>
+            <div class="kt-subheader__toolbar">
+                <div class="kt-subheader__wrapper">
+                    
+                </div>
             </div>
-          </div>
-    </div>  
-    <div class="col s12">
-        <div class="container">
-            <div class="section">               
-                <div class="row">
-                    <div class="col s12 m12 l12">
-                        <div id="icon-sizes" class="card card-default">
-                            <div class="card-content">
-                                <div class="row">
-                                    <?= Html::hiddenInput('language_id', $language_id, ['id' => 'language_id', 'data-url' => Yii::$app->urlManager->createUrl('/translatemanager/language/save')]); ?>
-                                    <div id="translates" class="<?= $language_id ?>">
-                                        <?php
-                                        Pjax::begin([
-                                            'id' => 'translates',
-                                        ]);
-                                        $form = ActiveForm::begin([
-                                            'method' => 'get',
-                                            'id' => 'search-form',
-                                            'enableAjaxValidation' => false,
-                                            'enableClientValidation' => false,
-                                        ]);
-                                        echo $form->field($searchModel, 'source')->dropDownList(['' => Yii::t('language', 'Original')] + Lang::getLanguageNames(true))->label(Yii::t('language', 'Source language'));
-                                        ActiveForm::end();
-                                        echo GridView::widget([
-                                            'dataProvider' => $dataProvider,
-                                            'filterModel' => $searchModel,
-                                            'columns' => [
-                                                ['class' => 'yii\grid\SerialColumn'],
-                                                [
-                                                    'format' => 'raw',
-                                                    'filter' => Language::getCategories(),
-                                                    'attribute' => 'category',
-                                                    'filterInputOptions' => ['class' => 'form-control', 'id' => 'category'],
-                                                ],
-                                                [
-                                                    'format' => 'raw',
-                                                    'attribute' => 'message',
-                                                    'filterInputOptions' => ['class' => 'form-control', 'id' => 'message'],
-                                                    'label' => Yii::t('language', 'Source'),
-                                                    'content' => function ($data) {
-                                                        return Html::textarea('LanguageSource[' . $data->id . ']', $data->source, ['class' => 'form-control source', 'readonly' => 'readonly']);
-                                                    },
-                                                ],
-                                                [
-                                                    'format' => 'raw',
-                                                    'attribute' => 'translation',
-                                                    'filterInputOptions' => [
-                                                        'class' => 'form-control',
-                                                        'id' => 'translation',
-                                                        'placeholder' => $searchEmptyCommand ? Yii::t('language', 'Enter "{command}" to search for empty translations.', ['command' => $searchEmptyCommand]) : '',
-                                                    ],
-                                                    'label' => Yii::t('language', 'Translation'),
-                                                    'content' => function ($data) {
-                                                        return Html::textarea('LanguageTranslate[' . $data->id . ']', $data->translation, ['class' => 'form-control translation', 'data-id' => $data->id, 'tabindex' => $data->id]);
-                                                    },
-                                                ],
-                                                [
-                                                    'format' => 'raw',
-                                                    'label' => Yii::t('language', 'Action'),
-                                                    'content' => function ($data) {
-                                                        return Html::button(Yii::t('language', 'Save'), ['type' => 'button', 'data-id' => $data->id, 'class' => 'btn btn-lg btn-success']);
-                                                    },
-                                                ],
+        </div>
+    </div>
+    <div class="kt-container  kt-grid__item kt-grid__item--fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="kt-portlet">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                               Scan
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="kt-form">
+                        <div class="kt-portlet__body">
+                            <?= Html::hiddenInput('language_id', $language_id, ['id' => 'language_id', 'data-url' => Yii::$app->urlManager->createUrl('/translatemanager/language/save')]); ?>
+                            <div id="translates" class="<?= $language_id ?>">
+                                <?php
+                                Pjax::begin([
+                                    'id' => 'translates',
+                                ]);
+                                $form = ActiveForm::begin([
+                                    'method' => 'get',
+                                    'id' => 'search-form',
+                                    'enableAjaxValidation' => false,
+                                    'enableClientValidation' => false,
+                                ]);
+                                echo $form->field($searchModel, 'source')->dropDownList(['' => Yii::t('language', 'Original')] + Lang::getLanguageNames(true))->label(Yii::t('language', 'Source language'));
+                                ActiveForm::end();
+                                echo GridView::widget([
+                                    'dataProvider' => $dataProvider,
+                                    'filterModel' => $searchModel,
+                                    'columns' => [
+                                        ['class' => 'yii\grid\SerialColumn'],
+                                        [
+                                            'format' => 'raw',
+                                            'filter' => Language::getCategories(),
+                                            'attribute' => 'category',
+                                            'filterInputOptions' => ['class' => 'form-control', 'id' => 'category'],
+                                        ],
+                                        [
+                                            'format' => 'raw',
+                                            'attribute' => 'message',
+                                            'filterInputOptions' => ['class' => 'form-control', 'id' => 'message'],
+                                            'label' => Yii::t('language', 'Source'),
+                                            'content' => function ($data) {
+                                                return Html::textarea('LanguageSource[' . $data->id . ']', $data->source, ['class' => 'form-control source', 'readonly' => 'readonly']);
+                                            },
+                                        ],
+                                        [
+                                            'format' => 'raw',
+                                            'attribute' => 'translation',
+                                            'filterInputOptions' => [
+                                                'class' => 'form-control',
+                                                'id' => 'translation',
+                                                'placeholder' => $searchEmptyCommand ? Yii::t('language', 'Enter "{command}" to search for empty translations.', ['command' => $searchEmptyCommand]) : '',
                                             ],
-                                        ]);
-                                        Pjax::end();
-                                        ?>
-                                    </div>
-                                </div>
-                            </div>
+                                            'label' => Yii::t('language', 'Translation'),
+                                            'content' => function ($data) {
+                                                return Html::textarea('LanguageTranslate[' . $data->id . ']', $data->translation, ['class' => 'form-control translation', 'data-id' => $data->id, 'tabindex' => $data->id]);
+                                            },
+                                        ],
+                                        [
+                                            'format' => 'raw',
+                                            'label' => Yii::t('language', 'Action'),
+                                            'content' => function ($data) {
+                                                return Html::button(Yii::t('language', 'Save'), ['type' => 'button', 'data-id' => $data->id, 'class' => 'btn btn-sm btn-success']);
+                                            },
+                                        ],
+                                    ],
+                                ]);
+                                Pjax::end();
+                                ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
- </div>
+</div>
