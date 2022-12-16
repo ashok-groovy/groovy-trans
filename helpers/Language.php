@@ -46,14 +46,14 @@ class Language
     
     public static function t($category, $message, $params = [], $language = null)
     {
-            
+            $message = str_replace("'","\'",$message);
             $language = $language ? $language : Yii::$app->language;
-            $subSql   = 'SELECT id FROM `language_source` WHERE `language_source`.message="'.$message.'" AND category = "'.$category.'"';
-           
+            $subSql   = "SELECT id FROM `language_source` WHERE `language_source`.message='{$message}' AND category = '{$category}'";
+
             $subData  = \Yii::$app->db->createCommand($subSql)->queryOne();      
             $sid       =  !empty($subData['id'])?$subData['id']:"";
             
-            $sql      = 'SELECT `translation` FROM `language_translate` WHERE language_translate.language = "'.$language.'" AND id = "'.$sid.'"';
+            $sql      = "SELECT `translation` FROM `language_translate` WHERE language_translate.language = '$language' AND id = '$sid'";
             $data     = \Yii::$app->db->createCommand($sql)->queryOne();   
             $message = !empty($data['translation'])?$data['translation']:$message;
             return Yii::t($category, $message, $params, $language);
